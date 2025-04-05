@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catalyst Crew | Under Construction</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #00ffff;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .construction-box {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.2);
+      max-width: 600px;
+      width: 90%;
+    }
+
+    .headline {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #00ffff;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ffff; }
+      to { text-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff; }
+    }
+
+    .description {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+      color: #ddd;
+    }
+
+    .countdown {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .countdown div {
+      background: #111;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.2);
+    }
+
+    .socials {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .socials a {
+      color: #00ffff;
+      text-decoration: none;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .socials a:hover {
+      transform: scale(1.2);
+      color: #fff;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    @media(max-width: 600px) {
+      .countdown {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">Catalyst Crew</div>
+  <div class="tagline">Catalysing your web presence</div>
+
+  <div class="construction-box">
+    <div class="headline">🚧 Under Construction 🚧</div>
+    <div class="description">
+      We're working hard to launch our official website.<br>
+      Stay tuned for something amazing!
+    </div>
+
+    <div class="countdown" id="countdown">
+      <div><span id="days">--</span><br>Days</div>
+      <div><span id="hours">--</span><br>Hours</div>
+      <div><span id="minutes">--</span><br>Minutes</div>
+      <div><span id="seconds">--</span><br>Seconds</div>
+    </div>
+
+    <div class="socials">
+      <a href="https://www.instagram.com/catalystcrewcreators/" title="Instagram">📸</a>
+      <a href="#" title="LinkedIn">💼</a>
+      <a href="#" title="GitHub">🐙</a>
+      <a href="catalystcrewcreatores@gmail.com" title="Email">✉️</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Catalyst Crew. All rights reserved.
+  </footer>
+
+  <script>
+    const countdown = () => {
+      const launchDate = new Date("April 8, 2025 00:00:00").getTime();
+      const now = new Date().getTime();
+      const timeLeft = launchDate - now;
+
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+      document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+      document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+      document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+    };
+
+    setInterval(countdown, 1000);
+  </script>
+
+</body>
+</html>
